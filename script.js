@@ -9,21 +9,22 @@ const darkColorsArr = [
     "#36454F",
     "#2C3E50",
     "#800020",
-  ];
-  
-  function getRandomIndex() {
+];
+
+function getRandomIndex() {
     const randomIndex = Math.floor(darkColorsArr.length * Math.random());
     return randomIndex;
-  }
-  
-  const body = document.querySelector("body");
-  const bgHexCodeSpanElement = document.querySelector("#bg-hex-code");
-  
-  function changeBackgroundColor() {
+}
+
+const body = document.querySelector("body");
+const bgHexCodeSpanElement = document.querySelector("#bg-hex-code");
+
+function changeBackgroundColor() {
     const color = darkColorsArr[getRandomIndex()];
-  
+
     bgHexCodeSpanElement.innerText = color;
     body.style.backgroundColor = color;
-  }
-  const btn = document.querySelector("#click-btn");
-  console.log(btn);
+}
+const btn = document.querySelector("#btn");
+
+btn.onclick = changeBackgroundColor;
